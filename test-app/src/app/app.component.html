@@ -1,0 +1,25 @@
+
+
+    
+    <!-- <app-list-user listData="This is data from app component"></app-list-user> -->
+    <!-- <app-user-form [parentData]=" data "></app-user-form> -->
+    <!-- <app-user-form></app-user-form>
+    <span>{{ title }} app is running!</span>
+    <another></another> -->
+
+    <div class="root">
+        <p>This is app component</p>
+        
+            <h3>Rendering User form</h3>
+        
+            <app-user-form [parentData]="data" (clickEvent)="handleUserFormClickEvent($event)"></app-user-form> 
+        
+            <p [class]="pclass"  [style.color]="pcolor" [style.text-decoration]="decor" [style.text-align]="align">{{message}}</p>
+
+            <h3>Rendering list data</h3>
+            
+            <app-list-user listData="This is data from app component"></app-list-user>
+    </div>
+    
+
+  
