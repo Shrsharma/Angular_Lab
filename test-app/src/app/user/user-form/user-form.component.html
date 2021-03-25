@@ -1,0 +1,58 @@
+<div class="user">
+
+This is some data displayed
+
+<!-- {{ parentData }} -->
+
+<!--cant use this as large records can be there so
+ <p>
+    {{users[0].id}}
+    {{users[0].name}}
+</p>
+<p>
+    {{users[1].id}}
+    {{users[1].name}}
+</p>
+<p>
+    {{users[2].id}}
+    {{users[2].name}}
+</p> -->
+
+<!-- <p *ngFor="let u of users"> 
+    {{u.id}}
+    {{u.name}}
+    <app-list-user></app-list-user>
+</p> -->
+
+    <!-- <div>
+        Firstname: <input type="text" name="firstname" (input)="handleFirstNameInput($event)">
+
+        LastName: <input type="text" name="lastname" (input)="handleLastNameInput($event)">
+
+        <button name="Submit" (click)="handleFormSubmit($event)">Submit</button>
+    </div> -->
+
+    <h2>Angular Forms</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="handleFormSubmit()">
+
+        FirstName: <input type="text" [ngClass]="{'invalid': formSubmitted && formControls.fName.errors}" formControlName="fName" />
+        <br />
+        <span *ngIf="formSubmitted && formControls.fName.errors">FirstName is required while submitting form</span>
+        <br />
+        <br />
+
+        LastName: <input type="text" [ngClass]="{'invalid': formSubmitted && formControls.lName.errors}" formControlName="lName" />
+        <span *ngIf="formSubmitted && formControls.lName.errors">LastName is requid</span>
+        <br />
+        <br />
+        Email: <input type="email" [ngClass]="{'invalid': formSubmitted && formControls.email.errors}" formControlName="email" />
+        <span *ngIf="formSubmitted && formControls.email.errors">Email should be valid</span>
+        <br />
+        <br />
+        Password: <input type="password" [ngClass]="{'invalid': formSubmitted && formControls.password.errors}"formControlName="password" />
+        <span *ngIf="formSubmitted && formControls.password.errors">Password minlength 6 requried</span>
+
+        <button type="submit" name="submit">Signup</button>
+    </form>
+</div>
